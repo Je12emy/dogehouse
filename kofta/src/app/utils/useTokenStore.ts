@@ -1,6 +1,6 @@
+import { __prod__ } from "doge-core";
 import create from "zustand";
 import { combine } from "zustand/middleware";
-import { __prod__ } from "doge-core";
 
 const accessTokenKey = "@toum/token" + (__prod__ ? "" : "dev");
 const refreshTokenKey = "@toum/refresh-token" + (__prod__ ? "" : "dev");

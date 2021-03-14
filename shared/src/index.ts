@@ -12,4 +12,4 @@ export {
   PublicRoomsQuery,
 } from "./types";
 export { __prod__, __staging__, linkRegex, apiBaseUrl } from "./constants";
-export { validateStruct } from "./validateStruct";
+export { validateStruct } from "./app/utils/validateStruct";
