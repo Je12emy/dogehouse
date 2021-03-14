@@ -5,20 +5,21 @@
  * @format
  * @flow strict-local
  */
+import "react-native-gesture-handler";
+import React from "react";
+import { StyleSheet, StatusBar, View } from "react-native";
 
-import React from 'react';
-import {SafeAreaView, StyleSheet, Text, StatusBar} from 'react-native';
-
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import { Colors } from "react-native/Libraries/NewAppScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import Login from "./app/pages/Login";
+import { VolumeSlider } from "./app/components/VolumeSlider";
 
 const App: React.FC = () => {
 	return (
-		<>
+		<NavigationContainer>
 			<StatusBar barStyle="dark-content" />
-			<SafeAreaView>
-				<Text>Test</Text>
-			</SafeAreaView>
-		</>
+			<Login />
+		</NavigationContainer>
 	);
 };
 
@@ -27,7 +28,7 @@ StyleSheet.create({
 		backgroundColor: Colors.lighter,
 	},
 	engine: {
-		position: 'absolute',
+		position: "absolute",
 		right: 0,
 	},
 	body: {
@@ -39,25 +40,25 @@ StyleSheet.create({
 	},
 	sectionTitle: {
 		fontSize: 24,
-		fontWeight: '600',
+		fontWeight: "600",
 		color: Colors.black,
 	},
 	sectionDescription: {
 		marginTop: 8,
 		fontSize: 18,
-		fontWeight: '400',
+		fontWeight: "400",
 		color: Colors.dark,
 	},
 	highlight: {
-		fontWeight: '700',
+		fontWeight: "700",
 	},
 	footer: {
 		color: Colors.dark,
 		fontSize: 12,
-		fontWeight: '600',
+		fontWeight: "600",
 		padding: 4,
 		paddingRight: 12,
-		textAlign: 'right',
+		textAlign: "right",
 	},
 });
 
