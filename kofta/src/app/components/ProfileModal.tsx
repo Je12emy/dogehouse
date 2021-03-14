@@ -6,7 +6,7 @@ import {
   useRoomChatStore,
 } from "../modules/room-chat/useRoomChatStore";
 import { Codicon } from "../svgs/Codicon";
-import { CurrentRoom, RoomUser } from "../types";
+import { CurrentRoom, RoomUser } from "doge-core";
 import { Button } from "./Button";
 import { modalConfirm } from "./ConfirmModal";
 import { UserProfile } from "./UserProfile";

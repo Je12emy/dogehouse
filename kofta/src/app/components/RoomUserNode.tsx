@@ -1,6 +1,6 @@
 import React from "react";
 import { wsend } from "../../createWebsocket";
-import { CurrentRoom, BaseUser, RoomUser } from "../types";
+import { CurrentRoom, BaseUser, RoomUser } from "doge-core";
 import { UserNode } from "./UserNode";
 
 interface RoomUserNodeProps {

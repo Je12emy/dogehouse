@@ -1,0 +1,10 @@
+{
+  "name": "doge-core",
+  "version": "1.0.0",
+  "description": "Sharable code for React & ReactNative",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ]
+}

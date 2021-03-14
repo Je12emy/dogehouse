@@ -20,7 +20,7 @@ import { ScheduledRoomCard } from "../modules/scheduled-rooms/ScheduledRoomCard"
 import { GET_SCHEDULED_ROOMS } from "../modules/scheduled-rooms/ScheduledRoomsPage";
 import { Logo } from "../svgs/Logo";
 import { PeopleIcon } from "../svgs/PeopleIcon";
-import { CurrentRoom, PublicRoomsQuery, ScheduledRoom } from "../types";
+import { CurrentRoom, PublicRoomsQuery, ScheduledRoom } from "doge-core";
 import { useTypeSafeTranslation } from "../utils/useTypeSafeTranslation";
 
 interface HomeProps {}

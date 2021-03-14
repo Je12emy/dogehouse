@@ -1,6 +1,6 @@
 import React from "react";
 import { MicOff } from "react-feather";
-import { BaseUser } from "../types";
+import { BaseUser } from "doge-core";
 import { Avatar } from "./Avatar";
 import GlassesDoge from "../../assets/glasses-doge.png";
 import RegularDoge from "../../assets/regular-doge.png";

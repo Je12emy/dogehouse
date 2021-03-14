@@ -1,5 +1,5 @@
 import { linkRegex } from "./../constants";
-import { BaseUser } from "../types";
+import { BaseUser } from "doge-core";
 
 // @ts-ignore
 import normalizeUrl from "normalize-url";

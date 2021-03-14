@@ -21,7 +21,7 @@ import {
   RoomChatMessageToken,
 } from "./modules/room-chat/useRoomChatStore";
 import { useShouldBeSidebar } from "./modules/room-chat/useShouldFullscreenChat";
-import { RoomUser } from "./types";
+import { RoomUser } from "doge-core";
 import { isUuid } from "./utils/isUuid";
 import { roomToCurrentRoom } from "./utils/roomToCurrentRoom";
 import { showErrorToast } from "./utils/showErrorToast";

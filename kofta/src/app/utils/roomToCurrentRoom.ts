@@ -1,4 +1,4 @@
-import { CurrentRoom, Room } from "../types";
+import { CurrentRoom, Room } from "doge-core";
 
 export const roomToCurrentRoom = (r: Room): CurrentRoom =>
   r
