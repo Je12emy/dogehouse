@@ -1,4 +1,3 @@
-export { sayHello, sayGoodbye } from "./hello-doge";
 export {
   Room,
   BaseUser,
@@ -12,3 +11,4 @@ export {
   ScheduledRoomsInfo,
   PublicRoomsQuery,
 } from "./types";
+export { __prod__, __staging__, linkRegex, apiBaseUrl } from "./constants";

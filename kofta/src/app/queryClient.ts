@@ -1,5 +1,5 @@
 import { QueryClient } from "react-query";
-import { apiBaseUrl } from "./constants";
+import { apiBaseUrl } from "doge-core";
 import { showErrorToast } from "./utils/showErrorToast";
 import { useTokenStore } from "./utils/useTokenStore";
 

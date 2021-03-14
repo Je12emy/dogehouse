@@ -3,9 +3,9 @@ import {
   app,
   systemPreferences,
   ipcMain,
-  globalShortcut
+  globalShortcut,
 } from "electron";
-import { __prod__ } from "./constants";
+import { __prod__ } from "doge-core";
 import { RegisterKeybinds } from "./util";
 let mainWindow: BrowserWindow;
 
@@ -38,7 +38,7 @@ function createWindow() {
   RegisterKeybinds(mainWindow);
   mainWindow.on("closed", () => {
     globalShortcut.unregisterAll();
-    mainWindow.destroy()
+    mainWindow.destroy();
   });
 }
 

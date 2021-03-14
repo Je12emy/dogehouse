@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.sayGoodbye = exports.sayHello = void 0;
-var hello_doge_1 = require("./hello-doge");
-Object.defineProperty(exports, "sayHello", { enumerable: true, get: function () { return hello_doge_1.sayHello; } });
-Object.defineProperty(exports, "sayGoodbye", { enumerable: true, get: function () { return hello_doge_1.sayGoodbye; } });
+exports.apiBaseUrl = exports.linkRegex = exports.__staging__ = exports.__prod__ = void 0;
+var constants_1 = require("./constants");
+Object.defineProperty(exports, "__prod__", { enumerable: true, get: function () { return constants_1.__prod__; } });
+Object.defineProperty(exports, "__staging__", { enumerable: true, get: function () { return constants_1.__staging__; } });
+Object.defineProperty(exports, "linkRegex", { enumerable: true, get: function () { return constants_1.linkRegex; } });
+Object.defineProperty(exports, "apiBaseUrl", { enumerable: true, get: function () { return constants_1.apiBaseUrl; } });

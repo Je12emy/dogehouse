@@ -1,4 +1,4 @@
-import { linkRegex } from "./../constants";
+import { linkRegex } from "doge-core";
 import { BaseUser } from "doge-core";
 
 // @ts-ignore
