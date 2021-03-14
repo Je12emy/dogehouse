@@ -5,7 +5,7 @@ import { object, pattern, size, string } from "superstruct";
 import { auth_query, wsMutation } from "../../createWebsocket";
 import { BaseUser } from "doge-core";
 import { showErrorToast } from "../utils/showErrorToast";
-import { validateStruct } from "../utils/validateStruct";
+import { validateStruct } from "doge-core";
 import { Button } from "./Button";
 import { FieldSpacer } from "./form-fields/FieldSpacer";
 import { InputField } from "./form-fields/InputField";
