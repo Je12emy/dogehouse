@@ -11,17 +11,16 @@ import { StyleSheet, StatusBar, View, Linking } from "react-native";
 
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { NavigationContainer } from "@react-navigation/native";
-import Login from "./app/pages/Login";
-import { VolumeSlider } from "./app/components/VolumeSlider";
+import Login from "./src/app/pages/Login";
+import { VolumeSlider } from "./src/app/components/VolumeSlider";
 import { InAppBrowser } from "react-native-inappbrowser-reborn";
-import { useTokenStore } from "./app/utils/useTokenStore";
+import { useTokenStore } from "./src/app/utils/useTokenStore";
 import queryString from "query-string";
-import { useSaveTokensFromQueryParams } from "./app/utils/useSaveTokensFromQueryParams";
+import { useSaveTokensFromQueryParams } from "./src/app/utils/useSaveTokensFromQueryParams";
+import { createStackNavigator } from "@react-navigation/stack";
+import { Routes } from "./src/app/Routes";
 
 const App: React.FC = () => {
-	const [accessToken, setAccessToken] = useState("");
-	const [refreshToken, setRefreshToken] = useState("");
-
 	if (!useTokenStore.getState().accessToken) {
 		useTokenStore.getState().loadTokens();
 	}
@@ -31,11 +30,7 @@ const App: React.FC = () => {
 
 	return (
 		<NavigationContainer>
-			<StatusBar barStyle="dark-content" />
-			{!hasTokens && <Login />}
-			{hasTokens && (
-				<VolumeSlider volume={50} onVolume={(v) => console.log(v)} />
-			)}
+			<Routes />
 		</NavigationContainer>
 	);
 };

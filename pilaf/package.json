@@ -14,6 +14,8 @@
 		"@react-native-community/async-storage": "^1.12.1",
 		"@react-native-community/masked-view": "^0.1.10",
 		"@react-navigation/native": "^5.9.3",
+		"@react-navigation/stack": "^5.14.3",
+		"mediasoup-client": "^3.6.29",
 		"query-string": "^6.14.1",
 		"react": "16.13.1",
 		"react-native": "0.63.4",
@@ -23,7 +25,11 @@
 		"react-native-reanimated": "^2.0.0",
 		"react-native-safe-area-context": "^3.2.0",
 		"react-native-screens": "^2.18.1",
+		"react-native-toast-message": "^1.4.9",
 		"react-native-vector-icons": "^8.1.0",
+		"react-native-webrtc": "^1.87.3",
+		"react-query": "^3.12.1",
+		"reconnecting-websocket": "^4.4.0",
 		"zustand": "^3.3.3"
 	},
 	"devDependencies": {

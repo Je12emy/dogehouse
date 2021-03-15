@@ -3,7 +3,7 @@ import { useTokenStore } from "./useTokenStore";
 import queryString from "query-string";
 import { Linking } from "react-native";
 import InAppBrowser from "react-native-inappbrowser-reborn";
-//import { createWebSocket } from "../../createWebsocket";
+import { createWebSocket } from "../../webrtc/createWebsocket";
 
 function getUrlParameter(url: string, name: string) {
 	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -23,7 +23,7 @@ export const useSaveTokensFromQueryParams = () => {
 			refreshToken: refreshToken,
 		});
 		InAppBrowser.close();
-		// createWebSocket();
+		createWebSocket();
 		// window.history.replaceState({}, document.title, "/");
 	});
 };
