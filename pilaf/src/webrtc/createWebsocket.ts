@@ -18,6 +18,7 @@ let lastMsg = "";
 
 export const auth_query = "auth";
 
+// TODO Should it be handle on mobile ?
 /*window.addEventListener("online", () => {
 	if (ws && ws.readyState === ws.CLOSED) {
 		Toast.show({
@@ -145,6 +146,7 @@ export const createWebSocket = (force?: boolean) => {
 				break;
 			}
 			case "error": {
+				console.log("ERROR AGAIN");
 				showErrorToast(json.d);
 				break;
 			}

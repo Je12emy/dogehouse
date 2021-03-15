@@ -6,6 +6,7 @@
  * @flow strict-local
  */
 import "react-native-gesture-handler";
+import "react-native-get-random-values";
 import React, { useEffect, useState } from "react";
 import { StyleSheet, StatusBar, View, Linking } from "react-native";
 
@@ -19,6 +20,8 @@ import queryString from "query-string";
 import { useSaveTokensFromQueryParams } from "./src/app/utils/useSaveTokensFromQueryParams";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Routes } from "./src/app/Routes";
+import { Providers } from "./src/Providers";
+import Toast from "react-native-toast-message";
 
 const App: React.FC = () => {
 	if (!useTokenStore.getState().accessToken) {
@@ -29,9 +32,12 @@ const App: React.FC = () => {
 	const hasTokens = useTokenStore((s) => !!s.accessToken && !!s.refreshToken);
 
 	return (
-		<NavigationContainer>
-			<Routes />
-		</NavigationContainer>
+		<Providers>
+			<NavigationContainer>
+				<Routes />
+			</NavigationContainer>
+			<Toast ref={(ref) => Toast.setRef(ref)} />
+		</Providers>
 	);
 };
 

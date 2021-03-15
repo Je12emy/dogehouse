@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { auth_query } from "../../createWebsocket";
+import { auth_query } from "../../webrtc/createWebsocket";
 import { BaseUser } from "../types";
 
 export const useMeQuery = () => {
