@@ -6,19 +6,36 @@
  * @flow strict-local
  */
 import "react-native-gesture-handler";
-import React from "react";
-import { StyleSheet, StatusBar, View } from "react-native";
+import React, { useEffect, useState } from "react";
+import { StyleSheet, StatusBar, View, Linking } from "react-native";
 
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import Login from "./app/pages/Login";
 import { VolumeSlider } from "./app/components/VolumeSlider";
+import { InAppBrowser } from "react-native-inappbrowser-reborn";
+import { useTokenStore } from "./app/utils/useTokenStore";
+import queryString from "query-string";
+import { useSaveTokensFromQueryParams } from "./app/utils/useSaveTokensFromQueryParams";
 
 const App: React.FC = () => {
+	const [accessToken, setAccessToken] = useState("");
+	const [refreshToken, setRefreshToken] = useState("");
+
+	if (!useTokenStore.getState().accessToken) {
+		useTokenStore.getState().loadTokens();
+	}
+	useSaveTokensFromQueryParams();
+
+	const hasTokens = useTokenStore((s) => !!s.accessToken && !!s.refreshToken);
+
 	return (
 		<NavigationContainer>
 			<StatusBar barStyle="dark-content" />
-			<Login />
+			{!hasTokens && <Login />}
+			{hasTokens && (
+				<VolumeSlider volume={50} onVolume={(v) => console.log(v)} />
+			)}
 		</NavigationContainer>
 	);
 };
