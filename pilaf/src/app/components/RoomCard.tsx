@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Text, View, StyleSheet } from "react-native";
+import { Icon } from "react-native-elements";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { CurrentRoom, Room } from "../types";
 import { useMeQuery } from "../utils/useMeQuery";
@@ -45,7 +46,13 @@ export const RoomCard: React.FC<RoomProps> = ({
 	return (
 		<TouchableOpacity onPress={onClick}>
 			<View style={styles.card}>
-				<Text style={styles.title}>{room.name?.slice(0, 100)}</Text>
+				<View style={styles.header}>
+					<Text style={styles.title}>{room.name?.slice(0, 100)}</Text>
+					<View style={styles.peopleCount}>
+						<Icon name="person" color="white" />
+						<Text style={styles.peopleCountTitle}>{n}</Text>
+					</View>
+				</View>
 				{previewNodes}
 			</View>
 		</TouchableOpacity>
@@ -59,12 +66,25 @@ const styles = StyleSheet.create({
 		marginBottom: 16,
 		borderRadius: 8,
 	},
+	header: {
+		flexDirection: "row",
+		justifyContent: "space-between",
+	},
 	title: {
 		color: "white",
 		marginBottom: 8,
 		fontSize: 18,
 	},
 	userName: {
+		color: "white",
+	},
+	peopleCount: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+		flexDirection: "row",
+	},
+	peopleCountTitle: {
 		color: "white",
 	},
 	textPrimary: {

@@ -13,8 +13,24 @@ export const Routes: React.FC<RoutesProps> = () => {
 
 	if (hasTokens) {
 		return (
-			<Stack.Navigator>
-				<Stack.Screen name="Home" component={Home} />
+			<Stack.Navigator
+				screenOptions={{
+					headerStyle: {
+						backgroundColor: "rgba(30, 30, 30, 1)",
+					},
+					headerTintColor: "#fff",
+					headerTitleStyle: {
+						fontWeight: "bold",
+						color: "#6b6659",
+						fontSize: 30,
+					},
+				}}
+			>
+				<Stack.Screen
+					name="Home"
+					component={Home}
+					options={{ title: "Dogehouse", headerTitleAlign: "left" }}
+				/>
 			</Stack.Navigator>
 		);
 	} else {

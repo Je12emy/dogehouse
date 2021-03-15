@@ -28,8 +28,7 @@ export const modalConfirm = (message: string, onConfirm: Fn) => {
 export const ConfirmModal: React.FC<Props> = () => {
 	const { onConfirm, message, close } = useConfirmModalStore();
 	return (
-		<View></View>
-		/*<Modal visible={!!onConfirm} onRequestClose={() => close()}>
+		<Modal visible={!!onConfirm} onRequestClose={() => close()}>
 			<Text>{message}</Text>
 			<Button title={"cancel"} onPress={close} />
 			<Button
@@ -39,6 +38,6 @@ export const ConfirmModal: React.FC<Props> = () => {
 					onConfirm?.();
 				}}
 			/>
-		</Modal>*/
+		</Modal>
 	);
 };

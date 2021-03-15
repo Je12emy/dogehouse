@@ -40,6 +40,8 @@ const App: React.FC = () => {
 	return (
 		<Providers>
 			<NavigationContainer>
+				<StatusBar barStyle="light-content" />
+
 				<Routes />
 			</NavigationContainer>
 			<Toast ref={(ref) => Toast.setRef(ref)} />

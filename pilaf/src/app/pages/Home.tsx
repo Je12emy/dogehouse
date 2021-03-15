@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { ActivityIndicator, StyleSheet, Text } from "react-native";
+import {
+	ActivityIndicator,
+	RefreshControl,
+	StyleSheet,
+	Text,
+} from "react-native";
 import { Button } from "react-native-elements";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { wsend, wsFetch } from "../../webrtc/createWebsocket";
@@ -9,6 +14,7 @@ import { modalConfirm } from "../components/ConfirmModal";
 import { RoomCard } from "../components/RoomCard";
 import { CurrentRoom, PublicRoomsQuery, ScheduledRoom } from "../types";
 import { useQuery, useQueryClient } from "react-query";
+import { ScrollView } from "react-native-gesture-handler";
 
 interface HomeProps {}
 
@@ -115,19 +121,42 @@ const Home: React.FC = () => {
 		}
 	);
 
+	const [refreshing, setRefreshing] = React.useState(false);
+
+	const wait = (timeout) => {
+		return new Promise((resolve) => setTimeout(resolve, timeout));
+	};
+
+	const onRefresh = React.useCallback(() => {
+		setRefreshing(true);
+		// TODO Refresh something for real
+		wait(2000).then(() => setRefreshing(false));
+	}, []);
+
 	return (
 		<>
 			<SafeAreaView style={styles.content}>
-				{cursors.map((cursor, i) => (
-					<Page
-						key={cursor}
-						currentRoom={currentRoom}
-						cursor={cursor}
-						isOnlyPage={cursors.length === 1}
-						onLoadMore={(c) => setCursors([...cursors, c])}
-						isLastPage={i === cursors.length - 1}
-					/>
-				))}
+				<ScrollView
+					refreshControl={
+						<RefreshControl
+							refreshing={refreshing}
+							onRefresh={onRefresh}
+							colors={["white"]}
+							tintColor={"white"}
+						/>
+					}
+				>
+					{cursors.map((cursor, i) => (
+						<Page
+							key={cursor}
+							currentRoom={currentRoom}
+							cursor={cursor}
+							isOnlyPage={cursors.length === 1}
+							onLoadMore={(c) => setCursors([...cursors, c])}
+							isLastPage={i === cursors.length - 1}
+						/>
+					))}
+				</ScrollView>
 			</SafeAreaView>
 		</>
 	);

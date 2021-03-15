@@ -19,6 +19,7 @@
 		5EC7286B2F144904016E9D95 /* libPods-rice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6082C5555DD5083A456A54D6 /* libPods-rice.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		89F12557CF69849E2B70FABF /* libPods-rice-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC67803FB6FBC3A570D315EC /* libPods-rice-tvOS.a */; };
+		8FCAFBB725FFB25900E7394A /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 8FCAFBB625FFB25900E7394A /* Fonts */; };
 		E6859D27FAE91412600A2502 /* libPods-rice-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2ABB980899D98F05774828A /* libPods-rice-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		80950DC78CD83AE6D928EC76 /* Pods-rice-riceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rice-riceTests.release.xcconfig"; path = "Target Support Files/Pods-rice-riceTests/Pods-rice-riceTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = rice/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86CE1ADAE12C2E25F81C43BB /* Pods-rice-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rice-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-rice-tvOS/Pods-rice-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		8FCAFBB625FFB25900E7394A /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
 		A2ABB980899D98F05774828A /* libPods-rice-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rice-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3F16C958AB15513F0897716 /* Pods-rice-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rice-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-rice-tvOSTests/Pods-rice-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC67803FB6FBC3A570D315EC /* libPods-rice-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rice-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 		13B07FAE1A68108700A75B9A /* rice */ = {
 			isa = PBXGroup;
 			children = (
+				8FCAFBB625FFB25900E7394A /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -161,7 +164,6 @@
 				A3F16C958AB15513F0897716 /* Pods-rice-tvOSTests.debug.xcconfig */,
 				422FCD54E4A0F3A006A566CE /* Pods-rice-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -342,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FCAFBB725FFB25900E7394A /* Fonts in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
