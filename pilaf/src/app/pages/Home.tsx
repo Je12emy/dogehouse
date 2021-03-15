@@ -15,6 +15,9 @@ import { RoomCard } from "../components/RoomCard";
 import { CurrentRoom, PublicRoomsQuery, ScheduledRoom } from "../types";
 import { useQuery, useQueryClient } from "react-query";
 import { ScrollView } from "react-native-gesture-handler";
+import Logo from "../components/Logo";
+import { useNavigation } from "@react-navigation/core";
+import { useMainWsHandler } from "../useMainWsHandler";
 
 interface HomeProps {}
 
@@ -33,6 +36,8 @@ const Page = ({
 	onLoadMore: (o: number) => void;
 }) => {
 	const { status } = useSocketStatus();
+	const navigation = useNavigation();
+	useMainWsHandler();
 	const { isLoading, data } = useQuery<PublicRoomsQuery>(
 		[get_top_public_rooms, cursor],
 		() =>
@@ -68,7 +73,9 @@ const Page = ({
 						onClick={() => {
 							const joinRoom = () => {
 								wsend({ op: "join_room", d: { roomId: r.id } });
-								//history.push("/room/" + r.id);
+								navigation.navigate("Room", {
+									roomId: r.id,
+								});
 							};
 							currentRoom
 								? modalConfirm(
@@ -136,6 +143,7 @@ const Home: React.FC = () => {
 	return (
 		<>
 			<SafeAreaView style={styles.content}>
+				<Logo style={styles.dogehouseTitle} />
 				<ScrollView
 					refreshControl={
 						<RefreshControl
@@ -172,6 +180,10 @@ const styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: "rgba(30, 30, 30, 1)",
 		padding: 16,
+	},
+	dogehouseTitle: {
+		alignSelf: "flex-start",
+		marginBottom: 16,
 	},
 	createRoomButton: {
 		position: "absolute",

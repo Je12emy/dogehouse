@@ -11,6 +11,8 @@ import Schedule from "./pages/Schedule";
 import Follow from "./pages/Follow";
 import Profile from "./pages/Profile";
 import { useMeQuery } from "./utils/useMeQuery";
+import HomeNavigator from "./pages/HomeNavigator";
+import { useMainWsHandler } from "./useMainWsHandler";
 
 interface RoutesProps {}
 
@@ -36,7 +38,7 @@ export const Routes: React.FC<RoutesProps> = () => {
 							return (
 								<Image
 									style={{ width: 24, height: 24, borderRadius: 12 }}
-									source={{ uri: me.avatarUrl }}
+									source={{ uri: me?.avatarUrl }}
 								/>
 							);
 						}
@@ -50,7 +52,11 @@ export const Routes: React.FC<RoutesProps> = () => {
 					inactiveBackgroundColor: "rgba(30, 30, 30, 1)",
 				}}
 			>
-				<Tab.Screen name="Home" component={Home} options={{ title: "Home" }} />
+				<Tab.Screen
+					name="Home"
+					component={HomeNavigator}
+					options={{ title: "Home" }}
+				/>
 				<Tab.Screen
 					name="Schedule"
 					component={Schedule}
