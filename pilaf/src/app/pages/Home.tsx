@@ -58,6 +58,7 @@ const Page = ({
 			{data.rooms.map((r) =>
 				r.id === currentRoom?.id ? null : (
 					<RoomCard
+						key={r.id}
 						onClick={() => {
 							const joinRoom = () => {
 								wsend({ op: "join_room", d: { roomId: r.id } });

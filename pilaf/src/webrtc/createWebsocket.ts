@@ -48,14 +48,10 @@ export const createWebSocket = (force?: boolean) => {
 	}
 	const { accessToken, refreshToken } = useTokenStore.getState();
 
-	console.log(accessToken);
 	if (!accessToken || !refreshToken) {
 		return;
 	}
-	console.log("CONNECTING");
 	useSocketStatus.getState().setStatus("connecting");
-
-	console.log(apiBaseUrl.replace("http", "ws") + "/socket");
 
 	ws = new ReconnectingWebSocket(
 		apiBaseUrl.replace("http", "ws") + "/socket",
@@ -146,7 +142,6 @@ export const createWebSocket = (force?: boolean) => {
 				break;
 			}
 			case "error": {
-				console.log("ERROR AGAIN");
 				showErrorToast(json.d);
 				break;
 			}

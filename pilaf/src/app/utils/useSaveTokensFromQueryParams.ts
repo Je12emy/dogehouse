@@ -15,10 +15,10 @@ function getUrlParameter(url: string, name: string) {
 }
 
 export const useSaveTokensFromQueryParams = () => {
-	Linking.addEventListener("url", (e) => {
+	Linking.addEventListener("url", async (e) => {
 		const accessToken = getUrlParameter(e.url, "accessToken");
 		const refreshToken = getUrlParameter(e.url, "refreshToken");
-		useTokenStore.getState().setTokens({
+		await useTokenStore.getState().setTokens({
 			accessToken: accessToken,
 			refreshToken: refreshToken,
 		});

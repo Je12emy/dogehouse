@@ -7,7 +7,7 @@
  */
 import "react-native-gesture-handler";
 import "react-native-get-random-values";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { StyleSheet, StatusBar, View, Linking } from "react-native";
 
 import { Colors } from "react-native/Libraries/NewAppScreen";
@@ -22,14 +22,20 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Routes } from "./src/app/Routes";
 import { Providers } from "./src/Providers";
 import Toast from "react-native-toast-message";
+import { createWebSocket } from "./src/webrtc/createWebsocket";
 
 const App: React.FC = () => {
 	if (!useTokenStore.getState().accessToken) {
 		useTokenStore.getState().loadTokens();
 	}
-	useSaveTokensFromQueryParams();
-
 	const hasTokens = useTokenStore((s) => !!s.accessToken && !!s.refreshToken);
+	useState(() => (hasTokens ? createWebSocket() : null));
+	useLayoutEffect(() => {
+		if (hasTokens) {
+			createWebSocket();
+		}
+	}, [hasTokens]);
+	useSaveTokensFromQueryParams();
 
 	return (
 		<Providers>

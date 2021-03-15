@@ -24,12 +24,11 @@ const getDefaultValues = async () => {
 
 export const useTokenStore = create(
 	combine({ accessToken: undefined, refreshToken: undefined }, (set) => ({
-		setTokens: (x: { accessToken: string; refreshToken: string }) => {
+		setTokens: async (x: { accessToken: string; refreshToken: string }) => {
 			try {
-				localStorage.setItem(accessTokenKey, x.accessToken);
-				localStorage.setItem(refreshTokenKey, x.refreshToken);
+				await AsyncStorage.setItem(accessTokenKey, x.accessToken);
+				await AsyncStorage.setItem(refreshTokenKey, x.refreshToken);
 			} catch {}
-
 			set(x);
 		},
 		loadTokens: async () => {

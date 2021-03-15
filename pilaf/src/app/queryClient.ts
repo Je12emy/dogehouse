@@ -29,7 +29,6 @@ export const queryClient = new QueryClient({
 	defaultOptions: {
 		mutations: {
 			onError: (e) => {
-				console.log("EEERRROOOOOOOR");
 				if ("message" in (e as Error)) {
 					showErrorToast((e as Error).message);
 				}
@@ -39,7 +38,6 @@ export const queryClient = new QueryClient({
 			retry: false,
 			staleTime: 60 * 1000 * 5,
 			onError: (e) => {
-				console.log("EEERRROOOOOOOR");
 				if ("message" in (e as Error)) {
 					showErrorToast((e as Error).message);
 				}
