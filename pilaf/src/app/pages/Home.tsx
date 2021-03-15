@@ -5,7 +5,7 @@ import {
 	StyleSheet,
 	Text,
 } from "react-native";
-import { Button } from "react-native-elements";
+import { Button, Icon } from "react-native-elements";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { wsend, wsFetch } from "../../webrtc/createWebsocket";
 import { useCurrentRoomStore } from "../../webrtc/stores/useCurrentRoomStore";
@@ -157,6 +157,11 @@ const Home: React.FC = () => {
 						/>
 					))}
 				</ScrollView>
+				<Button
+					containerStyle={styles.createRoomButton}
+					buttonStyle={{ backgroundColor: "transparent" }}
+					icon={<Icon name="add" size={24} color="white" />}
+				/>
 			</SafeAreaView>
 		</>
 	);
@@ -167,6 +172,18 @@ const styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: "rgba(30, 30, 30, 1)",
 		padding: 16,
+	},
+	createRoomButton: {
+		position: "absolute",
+		bottom: 16,
+		right: 16,
+		height: 48,
+		width: 48,
+		zIndex: 10,
+		backgroundColor: "rgba(59,130,246,1)",
+		borderRadius: 24,
+		alignItems: "center",
+		justifyContent: "center",
 	},
 	textPrimary: {
 		color: "white",
