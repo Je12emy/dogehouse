@@ -22,7 +22,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Routes } from "./src/app/Routes";
 import { Providers } from "./src/Providers";
 import Toast from "react-native-toast-message";
-import { createWebSocket } from "./src/webrtc/createWebsocket";
+import { createWebSocket } from "./src/createWebsocket";
+import { WebRtcApp } from "./src/webrtc/WebRtcApp";
 
 const App: React.FC = () => {
 	if (!useTokenStore.getState().accessToken) {
@@ -41,7 +42,6 @@ const App: React.FC = () => {
 		<Providers>
 			<NavigationContainer>
 				<StatusBar barStyle="light-content" />
-
 				<Routes />
 			</NavigationContainer>
 			<Toast ref={(ref) => Toast.setRef(ref)} />

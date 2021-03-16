@@ -2,6 +2,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import { StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { WebRtcApp } from "../../webrtc/WebRtcApp";
 import Home from "./Home";
 import Room from "./Room";
 
@@ -10,6 +11,7 @@ const HomeNavigator: React.FC = () => {
 
 	return (
 		<>
+			<WebRtcApp />
 			<Stack.Navigator>
 				<Stack.Screen
 					name="Home"

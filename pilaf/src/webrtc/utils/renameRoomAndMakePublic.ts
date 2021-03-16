@@ -1,4 +1,4 @@
-import { wsend } from "../createWebsocket";
+import { wsend } from "../../createWebsocket";
 //import { modalPrompt } from "../../app/components/PromptModal";
 
 export const renameRoomAndMakePublic = (currentName: string) => {

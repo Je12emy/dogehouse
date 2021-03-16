@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import { Button, Icon } from "react-native-elements";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { wsend, wsFetch } from "../../webrtc/createWebsocket";
+import { wsend, wsFetch } from "../../createWebsocket";
 import { useCurrentRoomStore } from "../../webrtc/stores/useCurrentRoomStore";
 import { useSocketStatus } from "../../webrtc/stores/useSocketStatus";
 import { modalConfirm } from "../components/ConfirmModal";

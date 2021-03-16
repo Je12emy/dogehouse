@@ -1,5 +1,5 @@
 import { TransportOptions } from "mediasoup-client/lib/types";
-import { wsend } from "../createWebsocket";
+import { wsend } from "../../createWebsocket";
 import { useVoiceStore } from "../stores/useVoiceStore";
 import { useWsHandlerStore } from "../stores/useWsHandlerStore";
 
@@ -11,6 +11,7 @@ export async function createTransport(
 	console.log(`create ${direction} transport`);
 	const { device, set } = useVoiceStore.getState();
 
+	console.log(device);
 	// ask the server to create a server-side transport object and send
 	// us back the info we need to create a client-side transport
 	console.log("transport options", transportOptions);
@@ -19,6 +20,7 @@ export async function createTransport(
 			? await device!.createRecvTransport(transportOptions)
 			: await device!.createSendTransport(transportOptions);
 
+	console.log("TRANSPORT ", transport);
 	// mediasoup-client will emit a connect event when media needs to
 	// start flowing for the first time. send dtlsParameters to the
 	// server, then call callback() on success or errback() on failure.

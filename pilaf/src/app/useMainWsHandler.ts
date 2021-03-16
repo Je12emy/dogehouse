@@ -1,7 +1,7 @@
 import { useAtom } from "jotai";
 import { useRef, useEffect } from "react";
 import Toast from "react-native-toast-message";
-import { closeWebSocket, wsend } from "../webrtc/createWebsocket";
+import { closeWebSocket, wsend } from "../createWebsocket";
 import { useCurrentRoomStore } from "../webrtc/stores/useCurrentRoomStore";
 import { useMuteStore } from "../webrtc/stores/useMuteStore";
 import { useWsHandlerStore } from "../webrtc/stores/useWsHandlerStore";

@@ -1,8 +1,9 @@
 import { useAtom } from "jotai";
 import React, { useEffect, useRef, useState } from "react";
-import { Button } from "../../app/components/Button";
+import { Button } from "react-native";
 import { volumeAtom } from "../../app/shared-atoms";
 import { useConsumerStore } from "../stores/useConsumerStore";
+import InCallManager from "react-native-incall-manager";
 
 interface AudioRenderProps {}
 
@@ -67,60 +68,35 @@ export const AudioRender: React.FC<AudioRenderProps> = () => {
 
 	return (
 		<>
-			<div
-				className={`absolute w-full h-full flex z-50 bg-simple-gray-80 ${
-					showAutoPlayModal ? "" : "hidden"
-				}`}
-			>
-				<div className={`p-8 rounded m-auto bg-simple-gray-3c`}>
-					<div className={`text-center mb-4`}>
-						Browsers require user interaction before they will play audio. Just
-						click okay to continue.
-					</div>
-					<Button
-						onClick={() => {
-							setShowAutoPlayModal(false);
-							audioRefs.current.forEach(([_, a]) => {
-								a.play().catch((err) => {
-									console.warn(err);
-								});
+			{Object.keys(consumerMap).map((k) => {
+				const { consumer, volume: userVolume, debug } = consumerMap[k];
+				return (
+					<MyAudio
+						volume={(userVolume / 200) * (globalVolume / 100)}
+						// autoPlay
+						playsInline
+						controls={false}
+						key={consumer.id}
+						debug={debug}
+						onRef={(a) => {
+							audioRefs.current.push([k, a]);
+							a.srcObject = new MediaStream([consumer.track]);
+							// prevent modal from showing up more than once in a single render cycle
+							const notAllowedErrorCount = notAllowedErrorCountRef.current;
+							a.play().catch((error) => {
+								if (
+									error.name === "NotAllowedError" &&
+									notAllowedErrorCountRef.current === notAllowedErrorCount
+								) {
+									notAllowedErrorCountRef.current++;
+									setShowAutoPlayModal(true);
+								}
+								console.warn("audioElem.play() failed:%o", error);
 							});
 						}}
-					>
-						okay
-						{Object.keys(consumerMap).map((k) => {
-							const { consumer, volume: userVolume, debug } = consumerMap[k];
-							return (
-								<MyAudio
-									volume={(userVolume / 200) * (globalVolume / 100)}
-									// autoPlay
-									playsInline
-									controls={false}
-									key={consumer.id}
-									debug={debug}
-									onRef={(a) => {
-										audioRefs.current.push([k, a]);
-										a.srcObject = new MediaStream([consumer.track]);
-										// prevent modal from showing up more than once in a single render cycle
-										const notAllowedErrorCount =
-											notAllowedErrorCountRef.current;
-										a.play().catch((error) => {
-											if (
-												error.name === "NotAllowedError" &&
-												notAllowedErrorCountRef.current === notAllowedErrorCount
-											) {
-												notAllowedErrorCountRef.current++;
-												setShowAutoPlayModal(true);
-											}
-											console.warn("audioElem.play() failed:%o", error);
-										});
-									}}
-								/>
-							);
-						})}
-					</Button>
-				</div>
-			</div>
+					/>
+				);
+			})}
 		</>
 	);
 };
