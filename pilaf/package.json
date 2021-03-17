@@ -15,6 +15,7 @@
     "react-native-splash-screen": "^3.2.0"
   },
   "devDependencies": {
+    "@types/react-native": "^0.63.52",
     "@babel/core": "^7.12.17",
     "@babel/runtime": "^7.12.18",
     "@react-native-community/eslint-config": "^2.0.0",

@@ -10,6 +10,7 @@ import React, { useEffect } from "react";
 import { SafeAreaView, StyleSheet, Text, StatusBar } from "react-native";
 import SplashScreen from "react-native-splash-screen";
 import { Colors } from "react-native/Libraries/NewAppScreen";
+import { fontFamily } from "./src/constants/GlobalStyles";
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -18,8 +19,15 @@ const App: React.FC = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <Text>Test</Text>
+      <SafeAreaView style={{ flex: 1, justifyContent: "center" }}>
+        <Text
+          style={{
+            alignSelf: "center",
+            fontFamily: fontFamily.extraBold,
+          }}
+        >
+          Almost before we knew it, we had left the ground
+        </Text>
       </SafeAreaView>
     </>
   );
