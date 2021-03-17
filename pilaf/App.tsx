@@ -5,31 +5,36 @@
  * @format
  * @flow strict-local
  */
-
+import "react-native-gesture-handler";
 import React, { useEffect } from "react";
 import { SafeAreaView, StyleSheet, Text, StatusBar } from "react-native";
 import SplashScreen from "react-native-splash-screen";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { fontFamily } from "./src/constants/GlobalStyles";
+import { useTokenStore } from "./src/module/auth/useTokenStore";
+import { NavigationContainer } from "@react-navigation/native";
+import { RootNavigator } from "./src/navigators/rootNavigator";
 
 const App: React.FC = () => {
+  const loadTokens = useTokenStore((state) => state.loadTokens);
+  const isTokenStoreReady = useTokenStore(
+    (s) => s.accessToken !== undefined && s.refreshToken !== undefined
+  );
+  if (!isTokenStoreReady) {
+    loadTokens();
+  }
+
   useEffect(() => {
-    SplashScreen.hide();
-  }, []);
+    if (isTokenStoreReady) {
+      SplashScreen.hide();
+    }
+  }, [isTokenStoreReady]);
+
   return (
-    <>
+    <NavigationContainer>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={{ flex: 1, justifyContent: "center" }}>
-        <Text
-          style={{
-            alignSelf: "center",
-            fontFamily: fontFamily.extraBold,
-          }}
-        >
-          Almost before we knew it, we had left the ground
-        </Text>
-      </SafeAreaView>
-    </>
+      <RootNavigator />
+    </NavigationContainer>
   );
 };
 
