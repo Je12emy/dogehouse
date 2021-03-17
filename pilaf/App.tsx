@@ -15,7 +15,7 @@ import { useTokenStore } from "./src/module/auth/useTokenStore";
 import { NavigationContainer } from "@react-navigation/native";
 import { RootNavigator } from "./src/navigators/rootNavigator";
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   const loadTokens = useTokenStore((state) => state.loadTokens);
   const isTokenStoreReady = useTokenStore(
     (s) => s.accessToken !== undefined && s.refreshToken !== undefined
@@ -77,4 +77,7 @@ StyleSheet.create({
   },
 });
 
-export default App;
+// TODO: Implement logic for switching between storybook UI and app UI, check: https://pusher.com/tutorials/storybook-react-native#setting-up-storybook
+// To hide/show the storybook UI, uncomment the following line of code:
+// The Welcome story was causing some trouble so it has been commented out from: storybook/stories/index.js
+export { default } from "./storybook";
