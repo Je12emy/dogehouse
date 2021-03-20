@@ -6,7 +6,6 @@ defmodule Broth.Routes.ScheduledRoom do
 
   use Plug.Router
 
-  plug(Broth.Plugs.Cors)
   plug(:match)
   plug(:dispatch)
 
@@ -19,7 +18,7 @@ defmodule Broth.Routes.ScheduledRoom do
         |> put_resp_content_type("application/json")
         |> send_resp(
           200,
-          Poison.encode!(%{room: ScheduledRooms.get_by_id(uuid)})
+          Poison.encode!(%{room: ScheduledRoom.get_by_id(uuid)})
         )
 
       _ ->

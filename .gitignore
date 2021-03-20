@@ -7,8 +7,6 @@ node_modules
 /.idea
 .docker
 .env
-.next
-storybook-static
 _
+.next
 .env.local
-kebab/lib

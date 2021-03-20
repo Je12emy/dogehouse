@@ -24,6 +24,7 @@ defmodule Beef.Access.Users do
     |> Repo.one()
   end
 
+
   @fetch_limit 16
   def search(query, offset) do
     query_with_percent = "%" <> query <> "%"
@@ -51,7 +52,7 @@ defmodule Beef.Access.Users do
         {current_room_id,
          from(u in User,
            where: u.currentRoomId == ^current_room_id,
-           left_join: rp in Beef.Schemas.RoomPermission,
+           left_join: rp in Beef.RoomPermission,
            on: rp.userId == u.id and rp.roomId == u.currentRoomId,
            select: %{u | roomPermissions: rp}
          )
