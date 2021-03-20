@@ -42,7 +42,7 @@ const Page = ({
   const { t } = useTypeSafeTranslation();
   const history = useHistory();
   const { status } = useSocketStatus();
-  const { isLoading, data, refetch } = useQuery<PublicRoomsQuery>(
+  const { isLoading, data } = useQuery<PublicRoomsQuery>(
     [get_top_public_rooms, cursor],
     () =>
       wsFetch<any>({
@@ -53,7 +53,6 @@ const Page = ({
       staleTime: Infinity,
       enabled: status === "auth-good",
       refetchOnMount: "always",
-      refetchInterval: 10000,
     }
   );
 
@@ -66,18 +65,11 @@ const Page = ({
   }
 
   if (isOnlyPage && data.rooms.length === 0) {
-    return (
-      <Button variant="small" onClick={() => refetch()}>
-        {t("pages.home.refresh")}
-      </Button>
-    );
+    return null;
   }
 
   return (
     <>
-      <Button variant="small" onClick={() => refetch()}>
-        {t("pages.home.refresh")}
-      </Button>
       {data.rooms.map((r) =>
         r.id === currentRoom?.id ? null : (
           <div className={`mt-4`} key={r.id}>
@@ -151,11 +143,8 @@ export const Home: React.FC<HomeProps> = () => {
           <div className={`mb-10 mt-8`}>
             <Logo />
           </div>
-          <div
-            className={`mb-6 flex justify-center`}
-            style={{ flexWrap: "wrap", gap: "1rem" }}
-          >
-            <div /* className={`mr-4 px-2.5`} */>
+          <div className={`mb-6 flex justify-center`}>
+            <div className={`mr-4 px-2.5`}>
               <CircleButton
                 onClick={() => {
                   wsend({ op: "fetch_following_online", d: { cursor: 0 } });
@@ -165,7 +154,7 @@ export const Home: React.FC<HomeProps> = () => {
                 <PeopleIcon width={30} height={30} fill="#fff" />
               </CircleButton>
             </div>
-            <div /* className={`ml-2 px-2.5`} */>
+            <div className={`ml-2 px-2.5`}>
               <CircleButton
                 onClick={() => {
                   queryClient.prefetchQuery(
@@ -186,7 +175,7 @@ export const Home: React.FC<HomeProps> = () => {
                 <Calendar width={30} height={30} color="#fff" />
               </CircleButton>
             </div>
-            <div /* className={`ml-2 px-2.5`} */>
+            <div className={`ml-2 px-2.5`}>
               <ProfileButton circle size={60} />
             </div>
           </div>

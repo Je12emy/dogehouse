@@ -125,7 +125,6 @@ defmodule Broth.SocketHandler do
                     GenRegistry.lookup_or_start(Onion.UserSession, user_id, [
                       %Onion.UserSession.State{
                         user_id: user_id,
-                        username: user.username,
                         avatar_url: user.avatarUrl,
                         display_name: user.displayName,
                         current_room_id: user.currentRoomId,
@@ -417,11 +416,6 @@ defmodule Broth.SocketHandler do
     {:ok, state}
   end
 
-  def handler("change_room_creator", %{"userId" => user_id_to_change}, state) do
-    Kousa.Room.change_room_creator(state.user_id, user_id_to_change)
-    {:ok, state}
-  end
-
   def handler("ban_from_room_chat", %{"userId" => user_id_to_ban}, state) do
     Kousa.RoomChat.ban_user(state.user_id, user_id_to_ban)
     {:ok, state}
@@ -437,11 +431,11 @@ defmodule Broth.SocketHandler do
     {:ok, state}
   end
 
-  # def handler("delete_account", _data, %State{} = state) do
-  #   Kousa.User.delete(state.user_id)
-  #   # this will log the user out
-  #   {:reply, {:close, 4001, "invalid_authentication"}, state}
-  # end
+  def handler("delete_account", _data, %State{} = state) do
+    Kousa.User.delete(state.user_id)
+    # this will log the user out
+    {:reply, {:close, 4001, "invalid_authentication"}, state}
+  end
 
   def handler(
         "delete_room_chat_message",
@@ -777,7 +771,6 @@ defmodule Broth.SocketHandler do
     case UUID.cast(id_or_username) do
       {:ok, uuid} ->
         Beef.Users.get_by_id(uuid)
-
       _ ->
         Beef.Users.get_by_username(id_or_username)
     end

@@ -1,11 +1,8 @@
-name: deploy-staging-elixir-api
+name: remote ssh command
 on:
   push:
-    paths:
-      - 'kousa/lib/**'
     branches:
       - staging
-
 jobs:
   build:
     name: Build

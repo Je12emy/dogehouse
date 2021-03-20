@@ -36,8 +36,8 @@
       "currentRoom": "حاليا في:",
       "startPrivateRoom": "ابدأ غرفة خاصة معهم"
     },
-    "followList": { "followHim": "follow", "followingHim": "following" },
-    "home": { "createRoom": "ابدأ غرفة", "refresh": "Refresh" },
+    "followList": {},
+    "home": { "createRoom": "ابدأ غرفة" },
     "inviteList": {
       "roomGone": "انتهت الغرفة، عد إلى الوراء",
       "shareRoomLink": "شارك رابط الغرفة",
@@ -79,9 +79,7 @@
       "editProfile": "تعديل الحساب",
       "followsYou": "يتابعك",
       "followers": "المتابِعون",
-      "following": "المتابَعون",
-      "followHim": "follow",
-      "followingHim": "following"
+      "following": "المتابَعون"
     },
     "voiceSettings": {
       "header": "إعدادات الصوت",
@@ -112,8 +110,7 @@
       "makeRoomPublicBtn": "اجعل الغرفة عامة!",
       "settings": "الإعدادات",
       "speaker": "متحدث",
-      "listener": "مستمع",
-      "chat": "Chat"
+      "listener": "مستمع"
     },
     "deviceNotSupported": {
       "notSupported": "جهازك غير مدعوم حاليا. يمكنك إنشاء",
@@ -143,7 +140,7 @@
         "public": "عام",
         "private": "خاص",
         "roomName": "اسم الغرفة",
-        "roomDescription": "وصف عن الغرفة",
+        "roomDescription": "وصف الغرفة",
         "descriptionError": "أقصى حد 500",
         "nameError": "يجب أن يكون ما بين حرفين و 60 حرف"
       },
@@ -175,8 +172,7 @@
         "banFromChat": "حظر من الماحدثة",
         "banFromRoom": "حظر من الغرفة",
         "goBackToListener": "إرجع إلى مستمع",
-        "deleteMessage": "حذف الرسالة",
-        "makeRoomCreator": "make room admin"
+        "deleteMessage": "حذف الرسالة"
       },
       "roomSettingsModal": {
         "requirePermission": "جعل التحدث بطلب فقط",
@@ -197,8 +193,7 @@
       "modal": {
         "needsFuture": "يجب أن تكون في المستقبل",
         "roomName": "اسم الغرفة",
-        "minLength": "أقل طول 2",
-        "roomDescription": "Description"
+        "minLength": "أقل طول 2"
       }
     },
     "roomChat": {
@@ -212,19 +207,7 @@
       "sendMessage": "أرسل رسالة",
       "whisper": "اهمس",
       "welcomeMessage": "مرحبا بك في المحادثة!",
-      "roomDescription": "وصف عن الغرفة"
-    },
-    "roomStatus": {
-      "fuelingRocket": "عبي الصاروخ بنزين",
-      "takingOff": "تقلع",
-      "inSpace": "بالفضاء",
-      "approachingMoon": "الاقتراب من القمر",
-      "lunarDoge": "Lunar doge",
-      "approachingSun": "الاقتراب من الشمس",
-      "solarDoge": "Solar doge",
-      "approachingGalaxy": "الاقتراب من المجره",
-      "galacticDoge": "Galactic Doge",
-      "spottedLife": "اكتشاف كوكب فيه حياه"
+      "roomDescription": "وصف الغرفة"
     }
   }
 }

@@ -35,8 +35,8 @@
       "currentRoom": "in questo momento è connesso a:",
       "startPrivateRoom": "avvia una stanza privata con lui"
     },
-    "followList": { "followHim": "follow", "followingHim": "following" },
-    "home": { "createRoom": "Crea una Stanza", "refresh": "Refresh" },
+    "followList": {},
+    "home": { "createRoom": "Crea una Stanza" },
     "inviteList": {
       "roomGone": "stanza inesistente, torna indietro",
       "shareRoomLink": "condividi link della stanza",
@@ -78,9 +78,7 @@
       "editProfile": "modifica profilo",
       "followsYou": "ti segue",
       "followers": "followers",
-      "following": "stai seguendo",
-      "followHim": "follow",
-      "followingHim": "following"
+      "following": "stai seguendo"
     },
     "voiceSettings": {
       "header": "Impostazioni della voce",
@@ -111,8 +109,7 @@
       "makeRoomPublicBtn": "Fai diventare la stanza pubblica!",
       "settings": "Impostazioni",
       "speaker": "Oratore",
-      "listener": "Ascoltatori",
-      "chat": "Chat"
+      "listener": "Ascoltatori"
     },
     "deviceNotSupported": {
       "notSupported": "Il tuo dispositivo non è supportato. Puoi segnalare il problema",
@@ -179,8 +176,7 @@
         "banFromChat": "banna dalla chat",
         "banFromRoom": "banna dalla stanza",
         "goBackToListener": "ritorna ad essere un ascoltatore",
-        "deleteMessage": "elimina questo messaggio",
-        "makeRoomCreator": "make room admin"
+        "deleteMessage": "elimina questo messaggio"
       },
       "roomSettingsModal": {
         "requirePermission": "richiedi permesso per parlare",
@@ -201,8 +197,7 @@
       "modal": {
         "needsFuture": "deve essere nel futuro",
         "roomName": "nome della stanza",
-        "minLength": "la lunghezza minima è 2",
-        "roomDescription": "Description"
+        "minLength": "la lunghezza minima è 2"
       }
     },
     "roomChat": {
@@ -217,18 +212,6 @@
       "whisper": "Sussurra",
       "welcomeMessage": "Benvenuto nella chat!",
       "roomDescription": "descrizione della stanza"
-    },
-    "roomStatus": {
-      "fuelingRocket": "Fueling rocket",
-      "takingOff": "Taking off",
-      "inSpace": "In space",
-      "approachingMoon": "Approaching moon",
-      "lunarDoge": "Lunar doge",
-      "approachingSun": "Approaching sun",
-      "solarDoge": "Solar doge",
-      "approachingGalaxy": "Approaching galaxy",
-      "galacticDoge": "Galactic Doge",
-      "spottedLife": "Planet with life spotted"
     }
   }
 }

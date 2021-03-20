@@ -36,8 +36,8 @@
       "currentRoom": "obecnie w:",
       "startPrivateRoom": "załóż z nim prywatny pokój"
     },
-    "followList": { "followHim": "follow", "followingHim": "following" },
-    "home": { "createRoom": "Stwórz pokój", "refresh": "Odśwież" },
+    "followList": {},
+    "home": { "createRoom": "Stwórz pokój" },
     "inviteList": {
       "roomGone": "pokój usunięty, wróć",
       "shareRoomLink": "udostępnij link do pokoju",
@@ -52,7 +52,7 @@
       "featureText_4": "Open Source",
       "featureText_5": "Chat tekstowy",
       "featureText_6": "Zasilany przez Doge",
-      "loginGithub": "zaloguj się przy użyciu GitHub",
+      "loginGithub": "zaloguj się przy użycius GitHub",
       "loginTwitter": "zaloguj się przy użyciu Twitter",
       "createTestUser": "stwórz testowe konto"
     },
@@ -79,9 +79,7 @@
       "editProfile": "edytuj profil",
       "followsYou": "obserwuje cię",
       "followers": "obserwujący",
-      "following": "obserwujesz",
-      "followHim": "follow",
-      "followingHim": "following"
+      "following": "obserwujesz"
     },
     "voiceSettings": {
       "header": "Ustawienia Głosu",
@@ -112,8 +110,7 @@
       "makeRoomPublicBtn": "Upublicznij pokój!",
       "settings": "Ustawienia",
       "speaker": "Mówiący",
-      "listener": "Słuchacz",
-      "chat": "Chat"
+      "listener": "Słuchacz"
     },
     "deviceNotSupported": {
       "notSupported": "Twoje urządzenie nie jest obecnie wspierane. Możesz zgłosić to",
@@ -180,8 +177,7 @@
         "banFromChat": "zbanuj z chatu",
         "banFromRoom": "zbanuj z pokoju",
         "goBackToListener": "powróć do słuchacza",
-        "deleteMessage": "usuń tą wiadomość",
-        "makeRoomCreator": "zmień na administratora pokoju"
+        "deleteMessage": "usuń tą wiadomość"
       },
       "roomSettingsModal": {
         "requirePermission": "wymaga pozwolenia na mówienie",
@@ -202,8 +198,7 @@
       "modal": {
         "needsFuture": "musi być w przyszłości",
         "roomName": "nazwa pokoju",
-        "minLength": "minimalna długość to 2",
-        "roomDescription": "Opis"
+        "minLength": "minimalna długość to 2"
       }
     },
     "roomChat": {
@@ -218,18 +213,6 @@
       "whisper": "Szeptaj",
       "welcomeMessage": "Witaj w chacie!",
       "roomDescription": "opis pokoju"
-    },
-    "roomStatus": {
-      "fuelingRocket": "Tankowanie rakiety",
-      "takingOff": "Startowanie",
-      "inSpace": "W kosmosie",
-      "approachingMoon": "Zbliża się do Księżyca",
-      "lunarDoge": "Księżycowy Doge",
-      "approachingSun": "Zbliża się do słońca",
-      "solarDoge": "Słoneczny Doge",
-      "approachingGalaxy": "Zbliża się do galaktyki",
-      "galacticDoge": "Galaktyczny Doge",
-      "spottedLife": "Znaleziono planetę z życiem"
     }
   }
 }

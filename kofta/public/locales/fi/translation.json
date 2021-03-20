@@ -12,7 +12,7 @@
     "edit": "muokkaa",
     "delete": "poista",
     "joinRoom": "liity huoneeseen",
-    "copyLink": "kopioi linkki",
+    "copyLink": "kopio linkki",
     "copied": "kopioitu",
     "formattedIntlDate": "{{date, intlDate}}",
     "formattedIntlTime": "{{time, intlTime}}"
@@ -30,14 +30,18 @@
   },
   "pages": {
     "_comment": "Respective Page UI Internationalization Strings",
-    "banUser": { "ban": "estä" },
+    "banUser": {
+      "ban": "estä"
+    },
     "followingOnlineList": {
       "listHeader": "Lista seuraamistasi käyttäjistä, jotka eivät ole yksityisessä huoneessa.",
       "currentRoom": "paikalla:",
       "startPrivateRoom": "luo yksityinen huone heidän kanssaan"
     },
-    "followList": { "followHim": "follow", "followingHim": "following" },
-    "home": { "createRoom": "Luo huone", "refresh": "Päivitä" },
+    "followList": {},
+    "home": {
+      "createRoom": "Luo huone"
+    },
     "inviteList": {
       "roomGone": "huone poistettu, palaa takaisin",
       "shareRoomLink": "jaa linkki huoneeseen",
@@ -70,18 +74,20 @@
     },
     "room": {
       "speakers": "Puhujat",
-      "requestingToSpeak": "Pyytävät puheoikeutta",
+      "requestingToSpeak": "Pyydä puheoikeutta",
       "listeners": "Kuuntelijat"
     },
-    "searchUser": { "search": "hae..." },
-    "soundEffectSettings": { "header": "Äänet" },
+    "searchUser": {
+      "search": "hae..."
+    },
+    "soundEffectSettings": {
+      "header": "Äänet"
+    },
     "viewUser": {
       "editProfile": "muokkaa profiilia",
       "followsYou": "seuraa sinua",
       "followers": "seuraajaa",
-      "following": "seurannassa",
-      "followHim": "follow",
-      "followingHim": "following"
+      "following": "seurannassa"
     },
     "voiceSettings": {
       "header": "Puheasetukset",
@@ -112,8 +118,7 @@
       "makeRoomPublicBtn": "Tee huoneesta julkinen!",
       "settings": "Asetukset",
       "speaker": "Puhuja",
-      "listener": "Kuuntelija",
-      "chat": "Keskustelu"
+      "listener": "Kuuntelija"
     },
     "deviceNotSupported": {
       "notSupported": "Käyttämääsi laitetta ei tueta. Voit luoda",
@@ -135,8 +140,12 @@
       "toggleMuteKeybind": "mikrofonin mykistys -pikanäppäin",
       "togglePushToTalkKeybind": "push-to-talk-pikanäppäin"
     },
-    "userVolumeSlider": { "noAudioMessage": "ei äänen ulostulolaitteita" },
-    "addToCalendar": { "add": "Lisää kalenteriin" },
+    "userVolumeSlider": {
+      "noAudioMessage": "ei äänen ulostulolaitteita"
+    },
+    "addToCalendar": {
+      "add": "Lisää kalenteriin"
+    },
     "wsKilled": {
       "description": "Palvelin katkaisi yhteyden. Tämä johtuu yleensä sivuston avaamisesta useampaan välilehteen.",
       "reconnect": "yhdistä uudelleen"
@@ -178,8 +187,7 @@
         "banFromChat": "estä keskustelusta",
         "banFromRoom": "estä huoneesta",
         "goBackToListener": "palaa kuuntelijaksi",
-        "deleteMessage": "poista viesti",
-        "makeRoomCreator": "ylennä huoneen ylläpitäjäksi"
+        "deleteMessage": "poista viesti"
       },
       "roomSettingsModal": {
         "requirePermission": "puhuminen vaatii oikeuden",
@@ -200,8 +208,7 @@
       "modal": {
         "needsFuture": "täytyy olla tulevaisuudessa",
         "roomName": "huoneen nimi",
-        "minLength": "minimipituus 2",
-        "roomDescription": "huoneen kuvaus"
+        "minLength": "minimipituus 2"
       }
     },
     "roomChat": {
@@ -216,18 +223,6 @@
       "whisper": "Kuiskaa",
       "welcomeMessage": "Tervetuloa keskusteluun!",
       "roomDescription": "huoneen kuvaus"
-    },
-    "roomStatus": {
-      "fuelingRocket": "Tankkaamassa rakettia",
-      "takingOff": "Nousemassa lentoon",
-      "inSpace": "Avaruudessa",
-      "approachingMoon": "Lähestymässä kuuta",
-      "lunarDoge": "Kuu-doge",
-      "approachingSun": "Lähestymässä aurinkoa",
-      "solarDoge": "Aurinko-doge",
-      "approachingGalaxy": "Lähestymässä galaksia",
-      "galacticDoge": "Galaktinen Doge",
-      "spottedLife": "Havaittiin planeetta, jossa on elämää"
     }
   }
 }
